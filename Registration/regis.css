@@ -1,0 +1,91 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Abhaya Libre ExtraBold'
+}
+
+
+body{
+    background-color: #F9F9F9;
+    padding: 50px;
+}
+
+.main {
+    width: 400px;
+    height: 400px;
+    background-color: aqua;
+    margin: 0;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 35px;
+    text-align: left;
+}
+
+
+.inputBox {
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.inputBox input {
+    background-color: white;
+    width: 50%;
+    height: 70px;
+    padding: 20px;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    box-shadow: #333;
+}
+
+.inputBox label{
+    display: block;
+    position: absolute;
+    top: 10%;
+    margin-left: 20px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #9B9B9B;
+    font-weight: 545;
+
+}
+
+.inputBox input:focus {
+    border-bottom: 2px solid #333;
+}
+
+button {
+    display: inline-block;
+    padding: 10px 50px;
+    background-color: #DDA86B;
+    color:white;
+    font-size:18px;
+    text-align: center;
+    border-radius: 78px;
+}
+
+p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #222222;
+    text-align: left;
+    font-weight:500;
+}
+
+p a {
+    text-decoration: none;
+    color: #DDA86B;
+    font-size:15px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+
+form {
+    text-align: left;
+    margin: 0;
+}
+
