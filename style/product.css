@@ -1,0 +1,181 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+}
+
+/* Kontainer Utama */
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 50px;
+  margin: 80px auto;
+  max-width: 1200px;
+  padding: 20px;
+}
+
+/* Grid Gambar */
+.grid-img {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  max-width: 500px;
+}
+
+.zoom {
+  --zoom: 10;
+}
+.grid-img img {
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  cursor: pointer;
+  --zoom: 10px;
+}
+
+/* Konten Deskripsi */
+.content {
+  max-width: 400px;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 5px;
+}
+
+.sub-title {
+  margin-bottom: 15px;
+  font-size: 20px;
+  color: #555;
+  opacity: 0.8;
+}
+
+/* Teks dan Deskripsi */
+p {
+  text-align: justify;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+p.price {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Size Chart */
+.size-chart {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.size-option {
+  padding: 8px 16px;
+  font-size: 18px;
+  border: 2px solid #333;
+  border-radius: 8px;
+  background-color: white;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.size-option.active {
+  background-color: #333;
+  color: white;
+}
+
+/* Tombol Add to Cart */
+.add-to-cart {
+  font-size: 18px;
+  padding: 10px 20px;
+  border: 2px solid #333;
+  border-radius: 8px;
+  background-color: white;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.add-to-cart:hover {
+  background-color: #333;
+  color: white;
+}
+
+.zoom-wrapper {
+  position: relative;
+}
+.zoom {
+  display: non;
+  border-radius: 8px;
+  position: absolute;
+  left: 600px;
+  max-width: 500px;
+  object-fit: cover;
+  z-index: 9999;
+}
+
+/* Responsive Styles */
+
+/* Phone */
+@media (max-width: 480px) {
+  body {
+    background-color: aqua;
+  }
+  .container {
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+  .grid-img {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+  .content {
+    max-width: 90%;
+  }
+}
+
+/* Tablet */
+@media (min-width: 481px) and (max-width: 1024px) {
+  body {
+    background-color: red;
+  }
+  .grid-img {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 90%;
+  }
+  .content {
+    max-width: 80%;
+  }
+}
+
+/* Laptop */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  body {
+    background-color: green;
+  }
+  .grid-img {
+    max-width: 500px;
+  }
+  .content {
+    max-width: 400px;
+  }
+}
+
+/* Large Screens */
+@media (min-width: 1441px) {
+  body {
+    background-color: #f5f5f5;
+  }
+  .container {
+    max-width: 1200px;
+  }
+}
