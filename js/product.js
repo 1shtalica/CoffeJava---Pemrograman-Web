@@ -86,21 +86,16 @@ sizes.forEach((size, i) => {
 });
 
 //size info
+const infoButton = document.getElementById("info");
+const sizeInfo = document.getElementById("size-info");
 
-document.addEventListener("click", function (event) {
-  const sizeInfo = document.getElementById("size-info");
-
-  if (!sizeInfo.contains(event.target)) {
-    console.log("Clicked outside of Size Information!");
-    sizeInfo.classList.add("move-out");
-  }
+infoButton.addEventListener("click", (event) => {
+  setTimeout(() => sizeInfo.classList.add("active"), 10);
+  event.stopPropagation();
 });
 
-document.getElementById("info").addEventListener("click", function () {
-  const sizeInfo = document.getElementById("size-info");
-
-  sizeInfo.style.left = "50%";
-  sizeInfo.style.top = "50%";
-  sizeInfo.style.transform = "translate(-50%, -50%)";
-  sizeInfo.classList.remove("move-out");
+document.addEventListener("click", (event) => {
+  if (!sizeInfo.contains(event.target) && event.target.id !== "info") {
+    sizeInfo.classList.remove("active");
+  }
 });

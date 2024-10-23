@@ -207,18 +207,51 @@ p.price {
   padding: 20px;
   background-color: #f9f9f9;
   position: absolute;
-  transform: translate(
-    -50%,
-    -50%
-  ); 
-  left: 50%; 
-  top: 50%; 
-  transition: transform 0.5s ease; 
+  left: 50%;
+  top: 50%;
   width: 50%;
   height: 50%;
-}
-.size-info {
   margin-top: 20px;
+  z-index: 99;
+
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+#info {
+  color: #555;
+  font-size: 18px;
+  transition: color 0.5s ease-in-out;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  padding-bottom: 2px; /* Ruang untuk underline */
+}
+
+#info::before {
+  content: "";
+  position: absolute;
+  left: 50%; 
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: black;
+  transition: width 0.5s ease-in-out, left 0.5s ease-in-out;
+}
+
+#info:hover {
+  color: black;
+}
+
+#info:hover::before {
+  width: 100%; 
+  left: 0; 
+}
+
+.size-info.active {
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 1;
 }
 
 table {
