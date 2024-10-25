@@ -2,6 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-size: 100;
 }
 
 body {
@@ -12,12 +13,12 @@ body {
 
 .container {
   display: flex;
-  gap: 50px;
-  margin: 80px auto;
-  max-width: 1200px;
+  gap: 5%;
+
+  max-width: 50%;
   padding: 20px;
-  margin-left: 350px;
-  margin-top: 170px;
+  margin-left: 15%;
+  margin-top: -400px;
 }
 
 .slider-wrapper {
@@ -32,7 +33,7 @@ body {
 }
 
 .grid-img img {
-  width: 500px;
+  width: 100%;
   border-radius: 8px;
   object-fit: cover;
   cursor: pointer;
@@ -122,17 +123,18 @@ p.price {
 }
 
 .cart {
+  margin-top: 100px;
   border: 1px solid #ddd;
   border-radius: 8px;
   padding: 20px;
   background-color: #f9f9f9;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-width: 400px;
-  margin: 30px auto;
+
   font-family: "Arial", sans-serif;
-  position: fixed;
-  left: 1400px;
-  top: 150px;
+  position: sticky;
+  left: 66%;
+  top:-10px;  
   width: 100%;
 }
 
@@ -226,13 +228,13 @@ p.price {
   cursor: pointer;
   display: inline-block;
   position: relative;
-  padding-bottom: 2px; /* Ruang untuk underline */
+  padding-bottom: 2px;
 }
 
 #info::before {
   content: "";
   position: absolute;
-  left: 50%; 
+  left: 50%;
   bottom: 0;
   width: 0;
   height: 2px;
@@ -245,8 +247,8 @@ p.price {
 }
 
 #info:hover::before {
-  width: 100%; 
-  left: 0; 
+  width: 100%;
+  left: 0;
 }
 
 .size-info.active {
@@ -281,4 +283,35 @@ tr:hover {
 
 .move-out {
   transform: translateX(100%);
+}
+/* mobile */
+@media (max-width: 767px) {
+  body {
+    background-color: lightblue;
+  }
+}
+
+/* tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+  body {
+    background-color: lightgreen;
+  }
+}
+
+/* Laptop and Small Desktop */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  * {
+    font-size: 98%;
+  }
+  body {
+    background-color: lightcoral;
+  }
+  .content {
+    width: 70%;
+  }
+  .cart {
+    
+    background-color: aqua;
+    bottom: 30%;
+  }
 }

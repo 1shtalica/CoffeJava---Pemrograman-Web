@@ -6,12 +6,14 @@ const nextBtn = document.querySelector(".next");
 let currentIndex = 0;
 
 const updateSliderPosition = () => {
-  console.log(currentIndex);
-  const translateX = -currentIndex * 500;
-  document.querySelector(
-    ".grid-img"
-  ).style.transform = `translateX(${translateX}px)`;
+  const container = document.querySelector(".grid-img");
+  const containerWidth = container.clientWidth; // Get the current width dynamically
+  const translateX = -currentIndex * containerWidth;
+
+  container.style.transform = `translateX(${translateX}px)`;
+  
 };
+
 
 prevBtn.addEventListener("click", () => {
   if (currentIndex > 0) {
@@ -31,7 +33,7 @@ nextBtn.addEventListener("click", () => {
   updateSliderPosition();
 });
 
-//add and substract
+
 let totalItems = 1;
 
 const price = parseInt(
