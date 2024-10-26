@@ -11,9 +11,7 @@ const updateSliderPosition = () => {
   const translateX = -currentIndex * containerWidth;
 
   container.style.transform = `translateX(${translateX}px)`;
-  
 };
-
 
 prevBtn.addEventListener("click", () => {
   if (currentIndex > 0) {
@@ -32,7 +30,6 @@ nextBtn.addEventListener("click", () => {
   }
   updateSliderPosition();
 });
-
 
 let totalItems = 1;
 
@@ -102,20 +99,32 @@ document.addEventListener("click", (event) => {
   }
 });
 
-
 //tabbar
-const tabButtons = document.querySelectorAll('.tab-button');
-const tabContents = document.querySelectorAll('.tab-content');
+const tabButtons = document.querySelectorAll(".tab-button");
+const tabContents = document.querySelectorAll(".tab-content");
 
-tabButtons.forEach(button => {
-  button.addEventListener('click', () => {
-    
-    tabButtons.forEach(btn => btn.classList.remove('active'));
-    tabContents.forEach(content => (content.style.display = 'none'));
+tabButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    tabButtons.forEach((btn) => btn.classList.remove("active"));
+    tabContents.forEach((content) => (content.style.display = "none"));
 
-    
-    button.classList.add('active');
-    const tabId = button.getAttribute('data-tab');
-    document.getElementById(tabId).style.display = 'block';
+    button.classList.add("active");
+    const tabId = button.getAttribute("data-tab");
+    document.getElementById(tabId).style.display = "block";
   });
+});
+
+window.addEventListener("scroll", function () {
+  const cart = document.querySelector(".cart");
+  const stopPoint =
+    document.querySelector(".tab-container").offsetTop + cart.offsetHeight-(cart.offsetHeight*(14/100)); 
+  const cartHeight = cart.offsetHeight;
+  const scrollPosition = window.scrollY;
+
+  
+  if (scrollPosition + cartHeight >= stopPoint) {
+    cart.style.top = `${stopPoint - scrollPosition - cartHeight}px`;
+  } else {
+    cart.style.top = "10px"; 
+  }
 });
