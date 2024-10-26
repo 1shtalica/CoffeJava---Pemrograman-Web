@@ -14,6 +14,8 @@ header {
     align-items: center;
     background-color: #DDA86B;
     padding: 10px 20px;
+    position: fixed;
+    width: 100%;
 }
 
 .logo {
@@ -48,7 +50,7 @@ nav ul li a {
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 500px;
+    height: 700px;
     background-image: url('../img/background-hero.jpg');
     background-size: cover;
     background-position: center;
