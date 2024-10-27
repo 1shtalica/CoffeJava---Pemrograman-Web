@@ -6,125 +6,95 @@ const nextBtn = document.querySelector(".next");
 let currentIndex = 0;
 
 const updateSliderPosition = () => {
-  const container = document.querySelector(".grid-img");
-  const containerWidth = container.clientWidth; // Get the current width dynamically
+  const $container = $(".grid-img");
+  const containerWidth = $container.width();
   const translateX = -currentIndex * containerWidth;
 
-  container.style.transform = `translateX(${translateX}px)`;
+  $container.css("transform", `translateX(${translateX}px)`);
 };
 
-prevBtn.addEventListener("click", () => {
-  if (currentIndex > 0) {
-    currentIndex--;
-  } else {
-    currentIndex = images.length - 1;
-  }
+$(".prev").on("click", function () {
+  currentIndex =
+    currentIndex > 0 ? currentIndex - 1 : $(".grid-img img").length - 1;
   updateSliderPosition();
 });
 
-nextBtn.addEventListener("click", () => {
-  if (currentIndex < images.length - 1) {
-    currentIndex++;
-  } else {
-    currentIndex = 0;
-  }
+$(".next").on("click", function () {
+  currentIndex =
+    currentIndex < $(".grid-img img").length - 1 ? currentIndex + 1 : 0;
   updateSliderPosition();
 });
 
+// Update item
 let totalItems = 1;
-
-const price = parseInt(
-  document.getElementById("price").innerHTML.trim().slice(3).replaceAll(".", "")
-);
-
-const add = document.getElementById("add");
-const substract = document.getElementById("substract");
-const subtotal = document.getElementById("sub-total");
-const displayItems = document.getElementById("display-item");
-let totalPrice = displayItems.value;
+const price = parseInt($("#price").text().trim().slice(3).replaceAll(".", ""));
 
 const updateSubTotal = () => {
-  totalPrice = totalItems * price;
-  displayItems.value = totalItems;
-  subtotal.innerHTML = `Rp ${totalPrice.toLocaleString("id-ID")},00`;
+  const totalPrice = totalItems * price;
+  $("#display-item").val(totalItems);
+  $("#sub-total").html(`Rp ${totalPrice.toLocaleString("id-ID")},00`);
 };
 
-add.addEventListener("click", () => {
-  totalItems = totalItems + 1;
+$("#add").on("click", function () {
+  totalItems++;
   updateSubTotal();
 });
 
-substract.addEventListener("click", () => {
+$("#substract").on("click", function () {
   if (totalItems > 1) {
-    totalItems = totalItems - 1;
+    totalItems--;
     updateSubTotal();
   }
 });
 
-displayItems.addEventListener("change", () => {
-  if (displayItems.value >= 1) {
-    totalItems = displayItems.value;
-  } else {
-    totalItems = 1;
-  }
+$("#display-item").on("change", function () {
+  totalItems = Math.max(1, parseInt($(this).val()) || 1);
   updateSubTotal();
 });
 
 //size
-const sizes = document.querySelectorAll(".size-option");
-
-sizes.forEach((size, i) => {
-  size.addEventListener("click", () => {
-    sizes.forEach((size, i) => {
-      size.style.backgroundColor = "white";
-      size.style.color = "black";
-    });
-    size.style.backgroundColor = "black";
-    size.style.color = "white";
-  });
+$(".size-option").on("click", function () {
+  $(".size-option").css({ backgroundColor: "white", color: "black" });
+  $(this).css({ backgroundColor: "#fcdcb8", color: "black" });
 });
 
 //size info
-const infoButton = document.getElementById("info");
-const sizeInfo = document.getElementById("size-info");
-
-infoButton.addEventListener("click", (event) => {
-  setTimeout(() => sizeInfo.classList.add("active"), 10);
+$("#info").on("click", function (event) {
   event.stopPropagation();
+  setTimeout(() => $("#size-info").addClass("active"), 10);
 });
 
-document.addEventListener("click", (event) => {
-  if (!sizeInfo.contains(event.target) && event.target.id !== "info") {
-    sizeInfo.classList.remove("active");
+$(document).on("click", function (event) {
+  if (
+    !$("#size-info").is(event.target) &&
+    $("#size-info").has(event.target).length === 0
+  ) {
+    $("#size-info").removeClass("active");
   }
 });
 
 //tabbar
-const tabButtons = document.querySelectorAll(".tab-button");
-const tabContents = document.querySelectorAll(".tab-content");
+$(".tab-button").on("click", function () {
+  $(".tab-button").removeClass("active");
+  $(".tab-content").hide();
 
-tabButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    tabButtons.forEach((btn) => btn.classList.remove("active"));
-    tabContents.forEach((content) => (content.style.display = "none"));
-
-    button.classList.add("active");
-    const tabId = button.getAttribute("data-tab");
-    document.getElementById(tabId).style.display = "block";
-  });
+  $(this).addClass("active");
+  const tabId = $(this).data("tab");
+  $(`#${tabId}`).show();
 });
 
-window.addEventListener("scroll", function () {
-  const cart = document.querySelector(".cart");
+$(window).on("scroll", function () {
+  const $cart = $(".cart");
   const stopPoint =
-    document.querySelector(".tab-container").offsetTop + cart.offsetHeight-(cart.offsetHeight*(14/100)); 
-  const cartHeight = cart.offsetHeight;
-  const scrollPosition = window.scrollY;
+    $(".tab-container").offset().top +
+    $cart.outerHeight() -
+    $cart.outerHeight() * 0.14;
+  const scrollPosition = $(window).scrollTop();
+  const cartHeight = $cart.outerHeight();
 
-  
   if (scrollPosition + cartHeight >= stopPoint) {
-    cart.style.top = `${stopPoint - scrollPosition - cartHeight}px`;
+    $cart.css("top", `${stopPoint - scrollPosition - cartHeight}px`);
   } else {
-    cart.style.top = "10px"; 
+    $cart.css("top", "10px");
   }
 });
