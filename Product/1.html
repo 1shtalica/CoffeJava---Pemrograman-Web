@@ -7,8 +7,41 @@
     <link rel="stylesheet" href="../style/product.css" />
   </head>
   <body>
+    <div>
+      
+    </div>
+    <div class="cart">
+      <div class="cart-value " >
+        <button id="substract" style="padding-bottom: 38px;">-</button>
+        <input type="number" id="display-item" value="1" min="0" ></input>
+        <button id="add" style="padding-bottom: 33px;">+</button>
+      </div>
+
+      <div>
+        <h3>Size Chart</h3>
+
+    <div class="size-chart ">
+      <button class="size-option" data-size="S">S</button>
+      <button class="size-option" data-size="M">M</button>
+      <button class="size-option" data-size="L">L</button>
+      <button class="size-option" data-size="XL">XL</button>
+      <button class="size-option" data-size="XL">XL</button>
+      <button class="size-option" data-size="XL">XL</button>
+      <button class="size-option" data-size="XL">XL</button>
+    </div>
+    <p id="info">size info</p>
+
+    
+      </div>
+      <div class="cart-total">
+        <h3>Subtotal</h3>
+        <h3 id="sub-total">Rp 300.000,00</h3>
+      </div>
+      <button class="add-to-cart">ADD TO CART</button>
+    </div>
     <div class="container">
-      <div class="slider-wrapper">
+      
+      <div class="slider-wrapper" style="position: sticky;">
         <button class="slider-btn prev">‹</button>
         <div class="grid-img">
           <img
@@ -40,118 +73,213 @@
         <p class="sub-title">Authentic Indonesia Batik</p>
         <p class="price" id="price" price="300000">Rp. 300.000,00</p>
 
-        <div class="mobile" style="display: none;">
+        <div class="mobile" style="display: none">
           <h3>Size Chart</h3>
 
-          <div class="size-chart ">
+          <div class="size-chart">
             <button class="size-option" data-size="S">S</button>
             <button class="size-option" data-size="M">M</button>
             <button class="size-option" data-size="L">L</button>
             <button class="size-option" data-size="XL">XL</button>
           </div>
         </div>
-       
 
         <h3>Descriptions</h3>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
           aliquam quibusdam quae porro velit iusto doloremque in beatae, odit
           magni ratione sint similique ad sequi delectus eius temporibus dolorem
-          impedit voluptates omnis ab. Molestias beatae animi iste ullam
-          delectus qui deserunt velit distinctio hic temporibus! Veniam
-          consectetur recusandae repudiandae ducimus sapiente similique pariatur
-          aliquam? Similique suscipit dolore debitis distinctio atque est
-          dignissimos excepturi quisquam alias sunt accusamus repudiandae ut ea
-          doloribus voluptate dicta pariatur repellendus ex natus ipsum
-          reiciendis, sed vitae molestias magnam! Quam rerum explicabo dolore.
-          Ex odit dignissimos inventore harum pariatur. Laborum quidem adipisci
-          magnam numquam, vero ipsa.
+          
         </p>
-
-        <div class="cart">
-          <div class="cart-value">
-            <button id="substract">-</button>
-            <input type="number" id="display-item" value="1" min="0"></input>
-            <button id="add">+</button>
+        <hr>
+        <br>
+        <div class="container-shop">
+          <div class="shop-detail">
+            <div class="logo-title">
+              <img src="../img/logo.png" alt="logo" class="logo">
+              <h3 class="shop-name">Supply Drop</h3>
+            </div>
+            <p class="status">Online 22 menit lalu</p>
+            <button class="follow-button">Follow</button>
           </div>
-
-          <div>
-            <h3>Size Chart</h3>
-
-        <div class="size-chart dekstop">
-          <button class="size-option" data-size="S">S</button>
-          <button class="size-option" data-size="M">M</button>
-          <button class="size-option" data-size="L">L</button>
-          <button class="size-option" data-size="XL">XL</button>
-          <button class="size-option" data-size="XL">XL</button>
-          <button class="size-option" data-size="XL">XL</button>
-          <button class="size-option" data-size="XL">XL</button>
-        </div>
-        <p id="info">size info</p>
-
         
+          <div class="review-detail">
+            <div class="rating">
+              <img src="../img/star.png" alt="star" class="star-icon">
+              <p>5.0 (16,8 rb)</p>
+            </div>
+            <p class="process-time">± 2 jam pesanan diproses</p>
           </div>
-          <div class="cart-total">
-            <h3>Subtotal</h3>
-            <h3 id="sub-total">Rp 300.000,00</h3>
-          </div>
-          <button class="add-to-cart">ADD TO CART</button>
         </div>
+        
+        </div>
+        
       </div>
 
-      <div class="size-info " id="size-info" >
+      <div class="size-info" id="size-info">
         <h3>Size Information</h3>
         <table>
-            <thead>
-                <tr>
-                    <th>Size</th>
-                    <th>Chest (cm)</th>
-                    <th>Waist (cm)</th>
-                    <th>Hip (cm)</th>
-                    <th>Height (cm)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>S</td>
-                    <td>86-91</td>
-                    <td>71-76</td>
-                    <td>86-91</td>
-                    <td>160-165</td>
-                </tr>
-                <tr>
-                    <td>M</td>
-                    <td>91-96</td>
-                    <td>76-81</td>
-                    <td>91-96</td>
-                    <td>165-170</td>
-                </tr>
-                <tr>
-                    <td>L</td>
-                    <td>96-101</td>
-                    <td>81-86</td>
-                    <td>96-101</td>
-                    <td>170-175</td>
-                </tr>
-                <tr>
-                    <td>XL</td>
-                    <td>101-106</td>
-                    <td>86-91</td>
-                    <td>101-106</td>
-                    <td>175-180</td>
-                </tr>
-                <tr>
-                    <td>XXL</td>
-                    <td>106-111</td>
-                    <td>91-96</td>
-                    <td>106-111</td>
-                    <td>180-185</td>
-                </tr>
-            </tbody>
+          <thead>
+            <tr>
+              <th>Size</th>
+              <th>Chest (cm)</th>
+              <th>Waist (cm)</th>
+              <th>Hip (cm)</th>
+              <th>Height (cm)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>S</td>
+              <td>86-91</td>
+              <td>71-76</td>
+              <td>86-91</td>
+              <td>160-165</td>
+            </tr>
+            <tr>
+              <td>M</td>
+              <td>91-96</td>
+              <td>76-81</td>
+              <td>91-96</td>
+              <td>165-170</td>
+            </tr>
+            <tr>
+              <td>L</td>
+              <td>96-101</td>
+              <td>81-86</td>
+              <td>96-101</td>
+              <td>170-175</td>
+            </tr>
+            <tr>
+              <td>XL</td>
+              <td>101-106</td>
+              <td>86-91</td>
+              <td>101-106</td>
+              <td>175-180</td>
+            </tr>
+            <tr>
+              <td>XXL</td>
+              <td>106-111</td>
+              <td>91-96</td>
+              <td>106-111</td>
+              <td>180-185</td>
+            </tr>
+          </tbody>
         </table>
-    </div>
+      </div>
+      <div class="tab-container">
+        <div class="tabs">
+          <button class="tab-button active" data-tab="informasi-produk">Informasi Produk</button>
+          <button class="tab-button" data-tab="tentang-produk">Tentang Produk</button>
+        </div>
+        
+        <div class="tab-content" id="informasi-produk">
+          <h2>Bahan & Perawatan</h2>
+          <div class="row">
+            <span class="icon">✂️</span>
+            <b>Bahan:</b> cotton
+            
+          </div>
+          <div class="row">
+            <span class="icon">👁️</span>
+            <b>Petunjuk Perawatan: </b> Dicuci dengan deterjen yang lembut, Jangan menggunakan pemutih
+           
+          </div>
     
+          <h2>Rincian</h2>
+          <p><strong>SKU:</strong> CCCA9AAD76BEE7GS</p>
+          <p><strong>Warna:</strong> White</p>
+          <p><strong>Leher:</strong> Berkerah</p>
+          <p><strong>Motif:</strong> Solid</p>
+        </div>
+    
+        <div class="tab-content" id="tentang-produk" style="display: none;">
+          <h2>Tentang Produk</h2>
+          <p>Ini adalah deskripsi tentang produk.</p>
+        </div>
+    
+      
+      </div>
     </div>
+    <h2 class="populer-title">Produk yang mungkin anda suka</h2>
+        <div class="products">
+            <div class="card">
+                <img src="../img/product.png" alt="Batik">
+                <h3>Batik A</h3>
+                <p>Rp 250,000</p>
+            </div>
+            <div class="card">
+              <img src="../img/product.png" alt="Batik">
+              <h3>Batik A</h3>
+              <p>Rp 250,000</p>
+          </div>
+          <div class="card">
+            <img src="../img/product.png" alt="Batik">
+            <h3>Batik A</h3>
+            <p>Rp 250,000</p>
+        </div>
+        <div class="card">
+          <img src="../img/product.png" alt="Batik">
+          <h3>Batik A</h3>
+          <p>Rp 250,000</p>
+      </div>
+      <div class="card">
+        <img src="../img/product.png" alt="Batik">
+        <h3>Batik A</h3>
+        <p>Rp 250,000</p>
+    </div>
+    <div class="card">
+      <img src="../img/product.png" alt="Batik">
+      <h3>Batik A</h3>
+      <p>Rp 250,000</p>
+  </div>
+  <div class="card">
+    <img src="../img/product.png" alt="Batik">
+    <h3>Batik A</h3>
+    <p>Rp 250,000</p>
+</div>
+<div class="card">
+  <img src="../img/product.png" alt="Batik">
+  <h3>Batik A</h3>
+  <p>Rp 250,000</p>
+</div>
+<div class="card">
+  <img src="../img/product.png" alt="Batik">
+  <h3>Batik A</h3>
+  <p>Rp 250,000</p>
+</div>
+            
+            <div class="card">
+                <img src="../img/product.png" alt="Batik">
+                <h3>Batik A</h3>
+                <p>Rp 250,000</p>
+            </div>
+            <div class="card">
+                <img src="../img/product.png" alt="Product">
+                <h3>Coming Soon</h3>
+                <p>TBD</p>
+            </div>
+            <div class="card">
+                <img src="../img/product.png" alt="Product">
+                <h3>Coming Soon</h3>
+                <p>TBD</p>
+            </div>
+            <div class="card">
+              <img src="../img/product.png" alt="Product">
+              <h3>Coming Soon</h3>
+              <p>TBD</p>
+          </div>
+          <div class="card">
+            <img src="../img/product.png" alt="Product">
+            <h3>Coming Soon</h3>
+            <p>TBD</p>
+        </div>
+        <div class="card">
+          <img src="../img/product.png" alt="Product">
+          <h3>Coming Soon</h3>
+          <p>TBD</p>
+      </div>
+        </div>
 
     <script src="../js/product.js"></script>
   </body>

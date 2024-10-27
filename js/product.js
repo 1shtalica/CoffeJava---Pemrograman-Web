@@ -6,11 +6,11 @@ const nextBtn = document.querySelector(".next");
 let currentIndex = 0;
 
 const updateSliderPosition = () => {
-  console.log(currentIndex);
-  const translateX = -currentIndex * 500;
-  document.querySelector(
-    ".grid-img"
-  ).style.transform = `translateX(${translateX}px)`;
+  const container = document.querySelector(".grid-img");
+  const containerWidth = container.clientWidth; // Get the current width dynamically
+  const translateX = -currentIndex * containerWidth;
+
+  container.style.transform = `translateX(${translateX}px)`;
 };
 
 prevBtn.addEventListener("click", () => {
@@ -31,7 +31,6 @@ nextBtn.addEventListener("click", () => {
   updateSliderPosition();
 });
 
-//add and substract
 let totalItems = 1;
 
 const price = parseInt(
@@ -97,5 +96,35 @@ infoButton.addEventListener("click", (event) => {
 document.addEventListener("click", (event) => {
   if (!sizeInfo.contains(event.target) && event.target.id !== "info") {
     sizeInfo.classList.remove("active");
+  }
+});
+
+//tabbar
+const tabButtons = document.querySelectorAll(".tab-button");
+const tabContents = document.querySelectorAll(".tab-content");
+
+tabButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    tabButtons.forEach((btn) => btn.classList.remove("active"));
+    tabContents.forEach((content) => (content.style.display = "none"));
+
+    button.classList.add("active");
+    const tabId = button.getAttribute("data-tab");
+    document.getElementById(tabId).style.display = "block";
+  });
+});
+
+window.addEventListener("scroll", function () {
+  const cart = document.querySelector(".cart");
+  const stopPoint =
+    document.querySelector(".tab-container").offsetTop + cart.offsetHeight-(cart.offsetHeight*(14/100)); 
+  const cartHeight = cart.offsetHeight;
+  const scrollPosition = window.scrollY;
+
+  
+  if (scrollPosition + cartHeight >= stopPoint) {
+    cart.style.top = `${stopPoint - scrollPosition - cartHeight}px`;
+  } else {
+    cart.style.top = "10px"; 
   }
 });
