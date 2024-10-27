@@ -12,14 +12,6 @@ $(document).ready(function () {
   });
 
   // Handle love icon click
-  $(".love-icon").click(function () {
-    const card = $(this).closest(".card");
-    const productData = {
-      id: Date.now(),
-      title: card.find("h3").text(),
-      price: card.find("p").text(),
-      img: card.find("img").attr("src"),
-    };
   $(".love-icon").click(function() {
       const card = $(this).closest('.card');
       const productData = {
