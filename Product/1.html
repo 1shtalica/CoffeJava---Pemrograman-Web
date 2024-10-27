@@ -3,18 +3,33 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Batik</title>
+    <title>Batik A</title>
     <link rel="stylesheet" href="../style/product.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
   </head>
   <body>
+    <header>
+      <div class="logo">
+          <img src="../img/logo-nav.png" alt="E-Nusantara">
+      </div>
+      <nav id="nav-menu">
+          <ul>
+              <li><a href="#">Home</a></li>
+              <li><a href="#">Shopping</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="../Favorite/favorite.html">Wishlist</a></li>
+          </ul>
+      </nav>
+      
+  </header>
     <div>
       
     </div>
     <div class="cart">
       <div class="cart-value " >
-        <button id="substract" style="padding-bottom: 38px;">-</button>
-        <input type="number" id="display-item" value="1" min="0" ></input>
-        <button id="add" style="padding-bottom: 33px;">+</button>
+        <button id="substract" style="">-</button>
+        <input type="number" id="display-item" value="1" min="0" style="padding-top: 30px; color: #ffffff;" ></input>
+        <button id="add" style="">+</button>
       </div>
 
       <div>
@@ -69,7 +84,7 @@
       </div>
 
       <div class="content">
-        <h1>Batik</h1>
+        <h1>Batik A</h1>
         <p class="sub-title">Authentic Indonesia Batik</p>
         <p class="price" id="price" price="300000">Rp. 300.000,00</p>
 
@@ -93,7 +108,7 @@
         </p>
         <hr>
         <br>
-        <div class="container-shop">
+        <div class="container-shop" style="background-color: #dda86b; color: #ffffff;">
           <div class="shop-detail">
             <div class="logo-title">
               <img src="../img/logo.png" alt="logo" class="logo">
@@ -201,85 +216,92 @@
       
       </div>
     </div>
-    <h2 class="populer-title">Produk yang mungkin anda suka</h2>
-        <div class="products">
-            <div class="card">
-                <img src="../img/product.png" alt="Batik">
-                <h3>Batik A</h3>
-                <p>Rp 250,000</p>
-            </div>
-            <div class="card">
+    <div class="popular-products">
+      <h2>Produk Populer</h2>
+      <div class="products">
+          <div class="card">
               <img src="../img/product.png" alt="Batik">
-              <h3>Batik A</h3>
-              <p>Rp 250,000</p>
+              <div class="detail-product">
+                  <h3>Batik A</h3>
+                  <p>Rp 250,000</p>
+                  <a href="../Product/1.html"><button class="button-card">Detail</button></a>
+                  <span class="love-icon">&#9829;</span>
+              </div>
           </div>
           <div class="card">
-            <img src="../img/product.png" alt="Batik">
-            <h3>Batik A</h3>
-            <p>Rp 250,000</p>
-        </div>
-        <div class="card">
-          <img src="../img/product.png" alt="Batik">
-          <h3>Batik A</h3>
-          <p>Rp 250,000</p>
-      </div>
-      <div class="card">
-        <img src="../img/product.png" alt="Batik">
-        <h3>Batik A</h3>
-        <p>Rp 250,000</p>
-    </div>
-    <div class="card">
-      <img src="../img/product.png" alt="Batik">
-      <h3>Batik A</h3>
-      <p>Rp 250,000</p>
-  </div>
-  <div class="card">
-    <img src="../img/product.png" alt="Batik">
-    <h3>Batik A</h3>
-    <p>Rp 250,000</p>
-</div>
-<div class="card">
-  <img src="../img/product.png" alt="Batik">
-  <h3>Batik A</h3>
-  <p>Rp 250,000</p>
-</div>
-<div class="card">
-  <img src="../img/product.png" alt="Batik">
-  <h3>Batik A</h3>
-  <p>Rp 250,000</p>
-</div>
-            
-            <div class="card">
-                <img src="../img/product.png" alt="Batik">
-                <h3>Batik A</h3>
-                <p>Rp 250,000</p>
-            </div>
-            <div class="card">
-                <img src="../img/product.png" alt="Product">
-                <h3>Coming Soon</h3>
-                <p>TBD</p>
-            </div>
-            <div class="card">
-                <img src="../img/product.png" alt="Product">
-                <h3>Coming Soon</h3>
-                <p>TBD</p>
-            </div>
-            <div class="card">
               <img src="../img/product.png" alt="Product">
-              <h3>Coming Soon</h3>
-              <p>TBD</p>
+              <div class="detail-product">
+                  <h3>Batik B</h3>
+                  <p>Rp 250,000</p>
+                  <a href="../Product/1.html"><button class="button-card">Detail</button></a>
+                  <span class="love-icon">&#9829;</span>
+              </div>
+          </div>
+          <div class="card">
+              <img src="../img/product.png" alt="Product">
+              <div class="detail-product">
+                  <h3>Batik C</h3>
+                  <p>Rp 250,000</p>
+                  <a href="../Product/1.html"><button class="button-card">Detail</button></a> 
+                  <span class="love-icon">&#9829;</span>
+              </div>
           </div>
           <div class="card">
             <img src="../img/product.png" alt="Product">
-            <h3>Coming Soon</h3>
-            <p>TBD</p>
+            <div class="detail-product">
+                <h3>Batik C</h3>
+                <p>Rp 250,000</p>
+                <a href="../Product/1.html"><button class="button-card">Detail</button></a> 
+                <span class="love-icon">&#9829;</span>
+            </div>
         </div>
         <div class="card">
           <img src="../img/product.png" alt="Product">
-          <h3>Coming Soon</h3>
-          <p>TBD</p>
+          <div class="detail-product">
+              <h3>Batik C</h3>
+              <p>Rp 250,000</p>
+              <a href="../Product/1.html"><button class="button-card">Detail</button></a> 
+              <span class="love-icon">&#9829;</span>
+          </div>
       </div>
+      <div class="card">
+        <img src="../img/product.png" alt="Product">
+        <div class="detail-product">
+            <h3>Batik C</h3>
+            <p>Rp 250,000</p>
+            <a href="../Product/1.html"><button class="button-card">Detail</button></a> 
+            <span class="love-icon">&#9829;</span>
         </div>
+    </div>
+    <div class="card">
+      <img src="../img/product.png" alt="Product">
+      <div class="detail-product">
+          <h3>Batik C</h3>
+          <p>Rp 250,000</p>
+          <a href="../Product/1.html"><button class="button-card">Detail</button></a> 
+          <span class="love-icon">&#9829;</span>
+      </div>
+  </div>
+  <div class="card">
+    <img src="../img/product.png" alt="Product">
+    <div class="detail-product">
+        <h3>Batik C</h3>
+        <p>Rp 250,000</p>
+        <a href="../Product/1.html"><button class="button-card">Detail</button></a> 
+        <span class="love-icon">&#9829;</span>
+    </div>
+</div>
+<div class="card">
+  <img src="../img/product.png" alt="Product">
+  <div class="detail-product">
+      <h3>Batik C</h3>
+      <p>Rp 250,000</p>
+      <a href="../Product/1.html"><button class="button-card">Detail</button></a> 
+      <span class="love-icon">&#9829;</span>
+  </div>
+</div>
+      </div>
+  </div>
 
     <script src="../js/product.js"></script>
   </body>
