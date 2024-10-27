@@ -1,3 +1,7 @@
+document.getElementById("burger-menu").addEventListener("click", function () {
+  const navMenu = document.getElementById("nav-menu").querySelector("ul");
+  navMenu.classList.toggle("show");
+});
 // landing.js
 $(document).ready(function() {
   // Load favorite status when page loads
@@ -12,6 +16,7 @@ $(document).ready(function() {
           price: card.find('p').text(),
           img: card.find('img').attr('src')
       };
+
 
       // Toggle active class
       $(this).toggleClass('active');
