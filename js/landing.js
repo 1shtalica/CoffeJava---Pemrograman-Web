@@ -7,6 +7,14 @@ $(document).ready(function () {
     $("#nav-menu ul").toggleClass("show");
   });
 
+  $('.logo').on('click', () => {
+    location.reload();
+})
+
+  $('.logo').on('click', () => {
+    location.reload();
+})
+
   // Handle love icon click
   $(".love-icon").click(function () {
     const card = $(this).closest(".card");
