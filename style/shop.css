@@ -39,6 +39,7 @@ header {
 nav ul {
     list-style: none;
     display: flex;
+    align-items: center;
     gap: 20px;
 }
 
@@ -54,6 +55,14 @@ nav ul li a {
 
 nav li:hover {
     font-weight: bold;
+}
+
+.profile-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: fill;
+    border: 3px solid orange;
 }
 
 .burger {
@@ -79,8 +88,9 @@ nav li:hover {
 .row-top {
     display: flex;
     width: 100%;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-top: 1rem;
     align-items: center;
 }
 
@@ -99,7 +109,7 @@ nav li:hover {
 .container-category{
     width: 40%;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
 }
 
@@ -111,6 +121,11 @@ nav li:hover {
     overflow: auto;
     flex-wrap: nowrap;
     list-style: none;
+}
+
+.category-list li:hover {
+    cursor: pointer;
+    font-weight: 700;
 }
 
 .container-search {
@@ -126,7 +141,7 @@ nav li:hover {
 .container-search input {
     width: 80%;
     padding: 12px 15px;
-    font-size: 8px;
+    font-size: 16px;
     border: none;
     border-radius: 25px;
     background-color: #f0f0f0;
@@ -222,6 +237,7 @@ nav li:hover {
 }
 
 .card {
+    width: 250px;
     background-color: #f4f4f4;
     border: 1px solid #ddd;
     border-radius: 10px;
@@ -229,8 +245,6 @@ nav li:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease-in-out;
     text-align: center;
-    flex: 1 1 calc(20% - 20px); /* Membatasi 5 item per baris */
-    max-width: calc(20% - 20px);
 }
 
 .card:hover {
@@ -285,7 +299,13 @@ nav li:hover {
     .burger {
         display: flex;
     }
+
+    .recommendation-list {
+        justify-content: space-around;
+    }
 }
+
+/* BAGIAN KEYFRAME */
 
 @keyframes slideInBottom {
     from{
