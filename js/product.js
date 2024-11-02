@@ -1,100 +1,137 @@
-//image slider
-const images = document.querySelectorAll(".grid-img img");
-const prevBtn = document.querySelector(".prev");
-const nextBtn = document.querySelector(".next");
-
-let currentIndex = 0;
-
-const updateSliderPosition = () => {
-  const $container = $(".grid-img");
-  const containerWidth = $container.width();
-  const translateX = -currentIndex * containerWidth;
-
-  $container.css("transform", `translateX(${translateX}px)`);
+//slider
+let curentIndex = 0;
+const updateSlider = () => {
+  const imageContainerWidth = $(".grid-img").width();
+  const imgSlide = -curentIndex * imageContainerWidth;
+  $(".grid-img").css("transform", `translateX(${imgSlide}px)`);
 };
 
-$(".prev").on("click", function () {
-  currentIndex =
-    currentIndex > 0 ? currentIndex - 1 : $(".grid-img img").length - 1;
-  updateSliderPosition();
-});
-
 $(".next").on("click", function () {
-  currentIndex =
-    currentIndex < $(".grid-img img").length - 1 ? currentIndex + 1 : 0;
-  updateSliderPosition();
+  curentIndex =
+    curentIndex == $(".grid-img img").length - 1 ? 0 : curentIndex + 1;
+  updateSlider();
 });
 
-// Update item
-let totalItems = 1;
-const price = parseInt($("#price").text().trim().slice(3).replaceAll(".", ""));
+$(".prev").on("click", function () {
+  curentIndex =
+    curentIndex == 0 ? $(".grid-img img").length - 1 : curentIndex - 1;
+  updateSlider();
+});
 
-const updateSubTotal = () => {
-  const totalPrice = totalItems * price;
-  $("#display-item").val(totalItems);
-  $("#sub-total").html(`Rp ${totalPrice.toLocaleString("id-ID")},00`);
+//size Option
+
+$(".size-option").on("click", function () {
+  $(".size-option").css({ "background-color": "white", color: "black" });
+  $(this).css("background-color", "#fcdcb8");
+});
+//update item
+let curentItem = 1;
+const price = $("#price").data("price");
+const updateSubtotal = () => {
+  const total = price * curentItem;
+  $("#sub-total").html(
+    total.toLocaleString("id-ID", { style: "currency", currency: "IDR" })
+  );
+  $("#sub-total-mobile").html(
+    total.toLocaleString("id-ID", { style: "currency", currency: "IDR" })
+  );
 };
 
 $("#add").on("click", function () {
-  totalItems++;
-  updateSubTotal();
+  curentItem = curentItem + 1;
+  $("#display-item").val(curentItem);
+  updateSubtotal();
 });
 
 $("#substract").on("click", function () {
-  if (totalItems > 1) {
-    totalItems--;
-    updateSubTotal();
-  }
+  $("#display-item").val(curentItem);
+  curentItem = curentItem <= 1 ? 1 : curentItem - 1;
+  updateSubtotal();
 });
 
 $("#display-item").on("change", function () {
-  totalItems = Math.max(1, parseInt($(this).val()) || 1);
-  updateSubTotal();
+  curentItem = $("#display-item").val() <= 1 ? 1 : $("#display-item").val();
+  updateSubtotal();
+  $("#display-item").val(curentItem);
 });
 
-//size
-$(".size-option").on("click", function () {
-  $(".size-option").css({ backgroundColor: "white", color: "black" });
-  $(this).css({ backgroundColor: "#fcdcb8", color: "black" });
+$("#add-mobile").on("click", function () {
+  curentItem = curentItem + 1;
+  $("#display-item-mobile").val(curentItem);
+  updateSubtotal();
 });
 
-//size info
+$("#substract-mobile").on("click", function () {
+  $("#display-item-mobile").val(curentItem);
+  curentItem = curentItem <= 1 ? 1 : curentItem - 1;
+  updateSubtotal();
+});
+
+$("#display-item-mobile").on("change", function () {
+  curentItem =
+    $("#display-item-mobile").val() <= 1 ? 1 : $("#display-item").val();
+  updateSubtotal();
+  $("#display-item").val(curentItem);
+});
+
+//position cart
+
+$(window).on("scroll", function () {
+  const tabBarOffset = $(".tab-container").offset().top;
+  const tabBarheight = $(".tab-container").outerHeight();
+  const stopPoint = tabBarOffset + tabBarheight;
+  const cartHeight = $(".cart").outerHeight();
+  const scroll = $(window).scrollTop();
+  if (stopPoint <= scroll + cartHeight) {
+    $(".cart").css("top", `${stopPoint - scroll - cartHeight}px`);
+  } else {
+    $(".cart").css("top", "10px");
+  }
+});
+//size-info
 $("#info").on("click", function (event) {
+  $("#size-info").addClass("active");
   event.stopPropagation();
-  setTimeout(() => $("#size-info").addClass("active"), 10);
 });
 
 $(document).on("click", function (event) {
   if (
     !$("#size-info").is(event.target) &&
-    $("#size-info").has(event.target).length === 0
+    $("#size-info").has(event.target).length == 0
   ) {
     $("#size-info").removeClass("active");
   }
 });
 
 //tabbar
-$(".tab-button").on("click", function () {
-  $(".tab-button").removeClass("active");
-  $(".tab-content").hide();
 
-  $(this).addClass("active");
-  const tabId = $(this).data("tab");
-  $(`#${tabId}`).show();
-});
+$(".tabs button").on("click", function () {
+  const dataTab = $(this).data("tab");
+  $(".tab-content").each(function () {
+    $(this).hide();
+  });
 
-$(window).on("scroll", function () {
-  const $cart = $(".cart");
-  const stopPoint =
-    $(".tab-container").offset().top +
-    $cart.outerHeight() -
-    $cart.outerHeight() * 0.14;
-  const scrollPosition = $(window).scrollTop();
-  const cartHeight = $cart.outerHeight();
-
-  if (scrollPosition + cartHeight >= stopPoint) {
-    $cart.css("top", `${stopPoint - scrollPosition - cartHeight}px`);
+  $(`#${dataTab}`).show();
+  const tabBarOffset = $(".tab-container").offset().top;
+  const tabBarheight = $(".tab-container").outerHeight();
+  const stopPoint = tabBarOffset + tabBarheight;
+  const cartHeight = $(".cart").outerHeight();
+  const scroll = $(window).scrollTop();
+  if (stopPoint <= scroll + cartHeight) {
+    $(".cart").css("top", `${stopPoint - scroll - cartHeight}px`);
   } else {
-    $cart.css("top", "10px");
+    $(".cart").css("top", "10px");
   }
 });
+
+$("#burger-menu").on("click", function () {
+  $("#nav-menu ul").toggleClass("show");
+});
+
+$('.logo').on('click', () => {
+  location.reload();
+})
+
+$('.logo').on('click', () => {
+  location.reload();
+})
