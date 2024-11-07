@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Nusantara</title>
+    <link rel="stylesheet" href="../style/profile.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../img/logo-nav.png" alt="E-Nusantara">
+        </div>
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="../Landing/index.html">Home</a></li>
+                <li><a href="../Shop/shop.html">Shopping</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="../Favorite/favorite.html">Wishlist</a></li>
+                <li><a href="../Profile/profile.html"><img class="profile-img" src="../img/masha-profile.jpg" alt=""></a></li>
+            </ul>
+        </nav>
+        <div class="burger" id="burger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <section class="profile-section">
+        <h2>Profile</h2>
+        <div class="profile-container">
+            <div class="profile-photo">
+                <img src="../img/masha-profile.jpg" alt="Foto Profil" class="user-image">
+            </div>
+            <div class="profile-info">
+                <h3>Name: <span id="user-name">Maria Kujou</span></h3>
+                <p>Email: <span id="user-email">maria@e-nusantara.com</span></p>
+                <p>Nomor Telepon: <span id="user-phone">0821212112</span></p>
+                <p>Alamat: <span id="user-address">Jln. Rusia</span></p>
+                <a href="edit.html"><button id="edit-profile">Edit Profile</button></a>
+            </div>
+        </div>
+    
+        <div class="card-container">
+            <a href="order.html" class="card">
+                <h3>My Order</h3>
+                <p>See status your order here.</p>
+            </a>
+            <a href="setting.html" class="card">
+                <h3>Settings</h3>
+                <p>Change password, Email, Phone Number.</p>
+            </a>
+        </div>
+    </section>
+    
+    
+    <script src="../js/profile.js"></script>
+</body>
+</html>

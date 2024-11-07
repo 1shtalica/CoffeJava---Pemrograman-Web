@@ -1,158 +1,339 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Batik</title>
-    <link rel="stylesheet" href="../style/product.css" />
-  </head>
-  <body>
-    <div class="container">
-      <div class="slider-wrapper">
-        <button class="slider-btn prev">‹</button>
-        <div class="grid-img">
-          <img
-            src="https://plus.unsplash.com/premium_photo-1675186049366-64a655f8f537?q=80&w=1974&auto=format&fit=crop"
-            alt="Batik 1"
-            class="images"
-          />
-          <img
-            src="https://plus.unsplash.com/premium_photo-1675186049366-64a655f8f537?q=80&w=1974&auto=format&fit=crop"
-            alt="Batik 2"
-            class="images"
-          />
-          <img
-            src="https://plus.unsplash.com/premium_photo-1675186049366-64a655f8f537?q=80&w=1974&auto=format&fit=crop"
-            alt="Batik 3"
-            class="images"
-          />
-          <img
-            src="https://plus.unsplash.com/premium_photo-1675186049366-64a655f8f537?q=80&w=1974&auto=format&fit=crop"
-            alt="Batik 4"
-            class="images"
-          />
-        </div>
-        <button class="slider-btn next">›</button>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Batik A</title>
+  <link rel="stylesheet" href="../style/product.css" />
+  <link rel="stylesheet" href="../style/landing.css" />
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+
+<body>
+  <div class="bottom-add-to-cart" style="gap: px;">
+
+    <button>
+      <h2>Add to Cart</h2>
+    </button>
+    <div>
+
+
+      <select id="size-dropdown" style="padding: 8px; font-size: 16px;">
+        <option value="S">S</option>
+        <option value="M">M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+      </select>
+
+
+    </div>
+  </div>
+  <div>
+    <div class="bottom-card-value  " style="border-radius: 5px;">
+      <button id="substract-mobile"
+        style="margin-right: 10px; font-size: 60px; margin-bottom: 23px; background-color: transparent;">-</button>
+      <input type="number" id="display-item-mobile" value="1" min="0"
+        style="padding-top: 25px; color: #ffffff; font-size: 25px; width: 39px; text-align: center; border: none; background-color: transparent; margin-bottom: 20px;"></input>
+
+      <button id="add-mobile"
+        style="font-size: 50px; margin-bottom: 10px; background-color: transparent; margin-right: 30px;">+</button>
+      <h2 id="sub-total-mobile" style="color: white;">Rp 300.000,00</h2>
+    </div>
+  </div>
+  <header>
+    <div class="logo">
+      <a href="../Landing/index.html"><img src="../img/logo-nav.png" alt="E-Nusantara"></a>
+    </div>
+    <nav id="nav-menu">
+        <ul>
+            <li><a href="../Landing/index.html">Home</a></li>
+            <li><a href="../Shop/shop.html">Shopping</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="../Favorite/favorite.html">Wishlist</a></li>
+            <li><a href="../Profile/profile.html"><img class="profile-img" src="../img/masha-profile.jpg" alt=""></a></li>
+        </ul>
+    </nav>
+    <div class="burger" id="burger-menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</header>
+
+  <div>
+
+  </div>
+
+
+  <div class="cart">
+    <div class="cart-value ">
+      <button id="substract" style="">-</button>
+
+      <input type="number" id="display-item" value="1" min="0" style="padding-top: 30px; color: #ffffff;"></input>
+      <button id="add" style="">+</button>
+    </div>
+
+    <div>
+      <h3>Size Chart</h3>
+
+      <div class="size-chart ">
+        <button class="size-option" data-size="S">S</button>
+        <button class="size-option" data-size="M">M</button>
+        <button class="size-option" data-size="L">L</button>
+        <button class="size-option" data-size="XL">XL</button>
+        <button class="size-option" data-size="XL">XL</button>
+        <button class="size-option" data-size="XL">XL</button>
+        <button class="size-option" data-size="XL">XL</button>
       </div>
+      <p id="info">size info</p>
 
-      <div class="content">
-        <h1>Batik</h1>
-        <p class="sub-title">Authentic Indonesia Batik</p>
-        <p class="price" id="price" price="300000">Rp. 300.000,00</p>
 
-        <div class="mobile" style="display: none;">
-          <h3>Size Chart</h3>
+    </div>
+    <div class="cart-total">
+      <h3>Subtotal</h3>
+      <h3 id="sub-total">Rp 300.000,00</h3>
+    </div>
+    <button class="add-to-cart">ADD TO CART</button>
+  </div>
+  <div class="container">
 
-          <div class="size-chart ">
-            <button class="size-option" data-size="S">S</button>
-            <button class="size-option" data-size="M">M</button>
-            <button class="size-option" data-size="L">L</button>
-            <button class="size-option" data-size="XL">XL</button>
-          </div>
-        </div>
-       
+    <div class="slider-wrapper" style="position: sticky;">
+      <button class="slider-btn prev">‹</button>
+      <div class="grid-img">
+        <img src="https://plus.unsplash.com/premium_photo-1675186049366-64a655f8f537?q=80&w=1974&auto=format&fit=crop"
+          alt="Batik 1" class="images" />
+        <img src="https://plus.unsplash.com/premium_photo-1675186049366-64a655f8f537?q=80&w=1974&auto=format&fit=crop"
+          alt="Batik 2" class="images" />
+        <img src="https://plus.unsplash.com/premium_photo-1675186049366-64a655f8f537?q=80&w=1974&auto=format&fit=crop"
+          alt="Batik 3" class="images" />
+        <img src="https://plus.unsplash.com/premium_photo-1675186049366-64a655f8f537?q=80&w=1974&auto=format&fit=crop"
+          alt="Batik 4" class="images" />
+      </div>
+      <button class="slider-btn next">›</button>
+    </div>
 
-        <h3>Descriptions</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
-          aliquam quibusdam quae porro velit iusto doloremque in beatae, odit
-          magni ratione sint similique ad sequi delectus eius temporibus dolorem
-          impedit voluptates omnis ab. Molestias beatae animi iste ullam
-          delectus qui deserunt velit distinctio hic temporibus! Veniam
-          consectetur recusandae repudiandae ducimus sapiente similique pariatur
-          aliquam? Similique suscipit dolore debitis distinctio atque est
-          dignissimos excepturi quisquam alias sunt accusamus repudiandae ut ea
-          doloribus voluptate dicta pariatur repellendus ex natus ipsum
-          reiciendis, sed vitae molestias magnam! Quam rerum explicabo dolore.
-          Ex odit dignissimos inventore harum pariatur. Laborum quidem adipisci
-          magnam numquam, vero ipsa.
-        </p>
+    <div class="content">
+      <h1>Batik A</h1>
+      <p class="sub-title">Authentic Indonesia Batik</p>
+      <p class="price" id="price" data-price=300000>Rp. 300.000,00</p>
 
-        <div class="cart">
-          <div class="cart-value">
-            <button id="substract">-</button>
-            <input type="number" id="display-item" value="1" min="0"></input>
-            <button id="add">+</button>
-          </div>
+      <div class="mobile" style="display: none">
+        <h3>Size Chart</h3>
 
-          <div>
-            <h3>Size Chart</h3>
-
-        <div class="size-chart dekstop">
+        <div class="size-chart">
           <button class="size-option" data-size="S">S</button>
           <button class="size-option" data-size="M">M</button>
           <button class="size-option" data-size="L">L</button>
           <button class="size-option" data-size="XL">XL</button>
-          <button class="size-option" data-size="XL">XL</button>
-          <button class="size-option" data-size="XL">XL</button>
-          <button class="size-option" data-size="XL">XL</button>
-        </div>
-        <p id="info">size info</p>
-
-        
-          </div>
-          <div class="cart-total">
-            <h3>Subtotal</h3>
-            <h3 id="sub-total">Rp 300.000,00</h3>
-          </div>
-          <button class="add-to-cart">ADD TO CART</button>
         </div>
       </div>
 
-      <div class="size-info " id="size-info" >
-        <h3>Size Information</h3>
-        <table>
-            <thead>
-                <tr>
-                    <th>Size</th>
-                    <th>Chest (cm)</th>
-                    <th>Waist (cm)</th>
-                    <th>Hip (cm)</th>
-                    <th>Height (cm)</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>S</td>
-                    <td>86-91</td>
-                    <td>71-76</td>
-                    <td>86-91</td>
-                    <td>160-165</td>
-                </tr>
-                <tr>
-                    <td>M</td>
-                    <td>91-96</td>
-                    <td>76-81</td>
-                    <td>91-96</td>
-                    <td>165-170</td>
-                </tr>
-                <tr>
-                    <td>L</td>
-                    <td>96-101</td>
-                    <td>81-86</td>
-                    <td>96-101</td>
-                    <td>170-175</td>
-                </tr>
-                <tr>
-                    <td>XL</td>
-                    <td>101-106</td>
-                    <td>86-91</td>
-                    <td>101-106</td>
-                    <td>175-180</td>
-                </tr>
-                <tr>
-                    <td>XXL</td>
-                    <td>106-111</td>
-                    <td>91-96</td>
-                    <td>106-111</td>
-                    <td>180-185</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    
+      <h3>Descriptions</h3>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
+        aliquam quibusdam quae porro velit iusto doloremque in beatae, odit
+        magni ratione sint similique ad sequi delectus eius temporibus dolorem
+
+      </p>
+      <hr>
+      <br>
+      <div class="container-shop" style="background-color: #dda86b; color: #ffffff;">
+        <div class="shop-detail">
+          <div class="logo-title">
+            <img src="../img/logo.png" alt="logo" class="logo">
+            <h3 class="shop-name">Supply Drop</h3>
+          </div>
+          <p class="status">Online 22 menit lalu</p>
+          <button class="follow-button">Follow</button>
+        </div>
+
+        <div class="review-detail">
+          <div class="rating">
+            <img src="../img/star.png" alt="star" class="star-icon">
+            <p>5.0 (16,8 rb)</p>
+          </div>
+          <p class="process-time">± 2 jam pesanan diproses</p>
+        </div>
+      </div>
+
     </div>
 
-    <script src="../js/product.js"></script>
-  </body>
+  </div>
+
+  <div class="size-info" id="size-info">
+    <h3>Size Information</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Size</th>
+          <th>Chest (cm)</th>
+          <th>Waist (cm)</th>
+          <th>Hip (cm)</th>
+          <th>Height (cm)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>S</td>
+          <td>86-91</td>
+          <td>71-76</td>
+          <td>86-91</td>
+          <td>160-165</td>
+        </tr>
+        <tr>
+          <td>M</td>
+          <td>91-96</td>
+          <td>76-81</td>
+          <td>91-96</td>
+          <td>165-170</td>
+        </tr>
+        <tr>
+          <td>L</td>
+          <td>96-101</td>
+          <td>81-86</td>
+          <td>96-101</td>
+          <td>170-175</td>
+        </tr>
+        <tr>
+          <td>XL</td>
+          <td>101-106</td>
+          <td>86-91</td>
+          <td>101-106</td>
+          <td>175-180</td>
+        </tr>
+        <tr>
+          <td>XXL</td>
+          <td>106-111</td>
+          <td>91-96</td>
+          <td>106-111</td>
+          <td>180-185</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="tab-container">
+    <div class="tabs">
+      <button class="tab-button " data-tab="informasi-produk">Informasi Produk</button>
+      <button class="tab-button" data-tab="tentang-produk">Tentang Produk</button>
+    </div>
+
+    <div class="tab-content" id="informasi-produk">
+      <h2>Bahan & Perawatan</h2>
+      <div class="row">
+        <span class="icon">✂️</span>
+        <b>Bahan:</b> cotton
+
+      </div>
+      <div class="row">
+        <span class="icon">👁️</span>
+        <b>Petunjuk Perawatan: </b> Dicuci dengan deterjen yang lembut, Jangan menggunakan pemutih
+
+      </div>
+
+      <h2>Rincian</h2>
+      <p><strong>SKU:</strong> CCCA9AAD76BEE7GS</p>
+      <p><strong>Warna:</strong> White</p>
+      <p><strong>Leher:</strong> Berkerah</p>
+      <p><strong>Motif:</strong> Solid</p>
+    </div>
+
+    <div class="tab-content" id="tentang-produk" style="display: none;">
+      <h2>Tentang Produk</h2>
+      <p>Ini adalah deskripsi tentang produk.</p>
+    </div>
+
+
+  </div>
+  </div>
+  <div class="popular-products">
+    <h2>Produk Populer</h2>
+    <div class="products">
+      <div class="card">
+        <img src="../img/product.png" alt="Batik">
+        <div class="detail-product">
+          <h3>Batik A</h3>
+          <p>Rp 250,000</p>
+          <a href="../Product/1.html"><button class="button-card">Detail</button></a>
+          <span class="love-icon">&#9829;</span>
+        </div>
+      </div>
+      <div class="card">
+        <img src="../img/product.png" alt="Product">
+        <div class="detail-product">
+          <h3>Batik B</h3>
+          <p>Rp 250,000</p>
+          <a href="../Product/1.html"><button class="button-card">Detail</button></a>
+          <span class="love-icon">&#9829;</span>
+        </div>
+      </div>
+      <div class="card">
+        <img src="../img/product.png" alt="Product">
+        <div class="detail-product">
+          <h3>Batik C</h3>
+          <p>Rp 250,000</p>
+          <a href="../Product/1.html"><button class="button-card">Detail</button></a>
+          <span class="love-icon">&#9829;</span>
+        </div>
+      </div>
+      <div class="card">
+        <img src="../img/product.png" alt="Product">
+        <div class="detail-product">
+          <h3>Batik C</h3>
+          <p>Rp 250,000</p>
+          <a href="../Product/1.html"><button class="button-card">Detail</button></a>
+          <span class="love-icon">&#9829;</span>
+        </div>
+      </div>
+      <div class="card">
+        <img src="../img/product.png" alt="Product">
+        <div class="detail-product">
+          <h3>Batik C</h3>
+          <p>Rp 250,000</p>
+          <a href="../Product/1.html"><button class="button-card">Detail</button></a>
+          <span class="love-icon">&#9829;</span>
+        </div>
+      </div>
+      <div class="card">
+        <img src="../img/product.png" alt="Product">
+        <div class="detail-product">
+          <h3>Batik C</h3>
+          <p>Rp 250,000</p>
+          <a href="../Product/1.html"><button class="button-card">Detail</button></a>
+          <span class="love-icon">&#9829;</span>
+        </div>
+      </div>
+      <div class="card">
+        <img src="../img/product.png" alt="Product">
+        <div class="detail-product">
+          <h3>Batik C</h3>
+          <p>Rp 250,000</p>
+          <a href="../Product/1.html"><button class="button-card">Detail</button></a>
+          <span class="love-icon">&#9829;</span>
+        </div>
+      </div>
+      <div class="card">
+        <img src="../img/product.png" alt="Product">
+        <div class="detail-product">
+          <h3>Batik C</h3>
+          <p>Rp 250,000</p>
+          <a href="../Product/1.html"><button class="button-card">Detail</button></a>
+          <span class="love-icon">&#9829;</span>
+        </div>
+      </div>
+      <div class="card">
+        <img src="../img/product.png" alt="Product">
+        <div class="detail-product">
+          <h3>Batik C</h3>
+          <p>Rp 250,000</p>
+          <a href="../Product/1.html"><button class="button-card">Detail</button></a>
+          <span class="love-icon">&#9829;</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/product.js"></script>
+</body>
+
 </html>

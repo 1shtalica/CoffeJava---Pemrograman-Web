@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Nusantara</title>
+    <link rel="stylesheet" href="../style/order.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="../img/logo-nav.png" alt="E-Nusantara">
+        </div>
+        <nav id="nav-menu">
+            <ul>
+                <li><a href="../Landing/index.html">Home</a></li>
+                <li><a href="../Shop/shop.html">Shopping</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="../Favorite/favorite.html">Wishlist</a></li>
+                <li><a href="../Profile/profile.html"><img class="profile-img" src="../img/masha-profile.jpg" alt=""></a></li>
+            </ul>
+        </nav>
+        <div class="burger" id="burger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <main class="my-orders">
+        <h2>My Orders</h2>
+        <div class="filter-buttons">
+            <button class="filter-btn" data-status="all">All</button>
+            <button class="filter-btn" data-status="shipped">Shipped</button>
+            <button class="filter-btn" data-status="pending">Pending</button>
+        </div>
+        <section class="order-list">
+            <div class="order-card">
+                <div class="order-header">
+                    <h3>Order #12345</h3>
+                    <span class="order-status shipped">Shipped</span>
+                </div>
+                <div class="order-details">
+                    <p><strong>Date:</strong> October 25, 2024</p>
+                    <p><strong>Items:</strong> 2</p>
+                    <p><strong>Total:</strong> Rp 500,000</p>
+                </div>
+                <button class="button-card">View Details</button>
+            </div>
+
+            <div class="order-card">
+                <div class="order-header">
+                    <h3>Order #12346</h3>
+                    <span class="order-status pending">Pending</span>
+                </div>
+                <div class="order-details">
+                    <p><strong>Date:</strong> October 28, 2024</p>
+                    <p><strong>Items:</strong> 1</p>
+                    <p><strong>Total:</strong> Rp 250,000</p>
+                </div>
+                <button class="button-card">View Details</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="../js/order.js"></script>
+</body>
+</html>
