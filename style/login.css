@@ -137,3 +137,45 @@ body {
 .btn-signup:hover {
     background-color: #c89b74;
 }
+
+
+/*600 is also a common breakpoint, theres another but i cba*/
+@media (max-width: 600px) {
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .login-section, .signup-section {
+        width: 90%; 
+        padding: 20px;
+    }
+
+    .signup-section h3 {
+        font-size: 30px;
+    }
+
+    .signup-section h4 {
+        font-size: 16px;
+    }
+
+    .btn-login, .btn-signup {
+       width: 50%; 
+       margin: 0 auto; 
+    }
+}
+
+/* minimal screen is 320 width, height idk */
+@media (max-width: 320px) {
+    .login-section h3 {
+        font-size: 24px; 
+    }
+
+    .signup-section h3 {
+        font-size: 24px;
+    }
+
+    .signup-section h4 {
+        font-size: 14px;
+    }
+}
